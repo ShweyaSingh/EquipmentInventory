@@ -1,0 +1,20 @@
+﻿@model List<EquipmentInventory.Shared.EquipmentDTO>
+@{
+    ViewBag.Title = "Equipments";
+}
+<h2>Equipment Inventory</h2>
+
+<div class="row">
+    @foreach (var equipment in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">@equipment.Name</h1>
+                    <p class="card-text">@equipment.Description</p>
+                    @Html.ActionLink("Details", "Details", "Equipment", new { id = equipment.Id }, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+    }
+</div>
